@@ -6,7 +6,7 @@ import java.util.concurrent.atomic.AtomicInteger;
 import java.util.concurrent.locks.ReentrantLock;
 import java.util.stream.IntStream;
 
-public class MutexTest {
+public class MutexExperiment {
 	ThreadGroup threadGroup = new ThreadGroup("mutexGroup");
 	
 	private int numThreads;
@@ -42,7 +42,7 @@ public class MutexTest {
 		}
 	}
 
-	public MutexTest(int numThreads, int t1, int t2) {
+	public MutexExperiment(int numThreads, int t1, int t2) {
 		this.numThreads = numThreads;
 		this.t1 = t1;
 		this.t2 = t2;
@@ -68,6 +68,6 @@ public class MutexTest {
 			System.err.println(e.getMessage());
 		}
 		
-		System.out.println(String.format("Mutex experiment main thread exiting after spawning %d threads", counter.get()));
+		System.out.println("Mutex experiment completed");
 	}
 }
